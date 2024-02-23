@@ -1,6 +1,15 @@
 import sys
 import logger
 
+"""
+why we are importing sys here and passing the argument "error_detail : sys"
+os related to files like cd, mkdir
+sys related to "interpreter" like import module, exception handling
+as we can have many env(interpreter) so which interpreter should i look for this error
+obviously the present one in which i have created my env and by forcing sys we are assuring this
+so it will access traceback info i.e. which file, line no and kind of error
+"""
+
 def error_message_detail(error, error_detail:sys):
     _,_,exc_tb = error_detail.exc_info()
     file_name = exc_tb.tb_frame.f_code.co_filename
@@ -11,7 +20,7 @@ def error_message_detail(error, error_detail:sys):
 
 class CustomException(Exception):
     def __init__(self, error_message, error_detail:sys):
-        super().__init__(error_message)
+        #super().__init__(error_message) #no use of calling parent as again we are updating error_message as self.error_message
         self.error_message = error_message_detail(error_message, error_detail = error_detail)
 
     def __str__(self):

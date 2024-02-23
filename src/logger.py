@@ -8,15 +8,20 @@ logs_path = os.path.join(os.getcwd(), "logs") # adding cd (mlproject) to "logs" 
 # below command will make one if its already not present and will not throw an error if already present(exist_ok = true)
 os.makedirs(logs_path, exist_ok=True)
 
-# don'be confused that why we are joining the paths again
-# logs_path represents directory where log files are stored
-# LOG_FILE_PATH represents the full path to a specific log file within the logs_path directory
+"""
+don't be confused that why we are joining the paths again
+logs_path represents directory only where we are going to store log file
+LOG_FILE_PATH represents the full path to a specific log file within the logs_path directory
+"""
+
 LOG_FILE_PATH = os.path.join(logs_path, LOG_FILE)
 
-# or we can create "logs" folder manually so we don't need logs_path and os.makedirs command
-# we can simply have to writ these two commands
-# LOG_FILE = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
-# LOG_FILE_PATH = os.path.join(path to logs folder, LOG_FILE)
+"""
+or we can create "logs" folder manually so we don't need logs_path and os.makedirs command
+we can simply have to writ these two commands
+LOG_FILE = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
+LOG_FILE_PATH = os.path.join(path to logs folder, LOG_FILE)
+"""
 
 logging.basicConfig(
     filename = LOG_FILE_PATH,

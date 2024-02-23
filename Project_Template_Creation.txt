@@ -1,0 +1,32 @@
+## SETUP
+
+1. Create Git Hub Repo
+    README, .gitignore -> template = python
+
+2. Create Virtual environment with specific python version
+
+3. Create requirements.txt to write down all the dependancies for entire project
+    '-e .' should be written as the last line of this file
+    -e Install a project in editable mode (i.e. >setuptools “develop mode”) from a >local project path or a VCS url.
+    dot indicates the path, i.e the actual directory i.e after executing requirements.txt go to setuptools and create the package 
+
+4. Create setup.py to create the package of project
+    Result of 3 and 4 will be the foldername.egg info i.e. package created and its detail
+
+Note : In the project we will install dependancies quite often as we need them so its better to comment '-e .'
+       bcoz every time we execute 'e .', it will again create package, it's like version 2, 3, 4 and so on
+       while we are still creating our 1st version
+
+5. Create src (source) folder and add __init__.py file in this folder and leave it blank for now
+
+
+## Creating Source folder
+
+1. Three important files
+    -> exception.py : for exception handling, in this huge project which script is throwing error, what line no. and what is the error
+
+    -> logger.py : maintain logs, when what happened (here specifically for status monitoring or fault investigation or exception handling,
+                   as we are using severity level = logging.INFO)
+    Note : Logs(i.e. logs or error which we got during the project) are ignored by .gitignore and it makes sense
+
+    -> utils.py : 

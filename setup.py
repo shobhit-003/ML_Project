@@ -6,6 +6,8 @@ from setuptools import find_packages, setup
 from typing import List                     
 # if we don't give data type in python then by default it gives data type to variable
 # it's good to give data type by ourself to avoid any ambiguity, either in the func argument and in its return type
+# these are just hints for someone that it should be the data type
+# python doesn't throw an error if data type mismatch like C++ i.e. python doesn't force data type at run time
 
 HYPEN_E_DOT = '-e .'
 def get_requirements(file_path : str)->List[str]:
